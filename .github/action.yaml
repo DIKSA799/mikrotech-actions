@@ -6,6 +6,7 @@ on:
     -'main'
   pull_request:
     -'main'
+    workflow_dispatch:
 
 jobs:
   tests:
@@ -13,4 +14,13 @@ jobs:
 
     steps:
     - name: Hello 
+      uses: actions/checkout@v2
       run: echo "Hello there this is github action Live" 
+      shell: bash
+
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye Action
+        run: echo "Goodbye Action"
+        shell: bash

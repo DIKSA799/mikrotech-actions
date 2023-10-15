@@ -1,0 +1,16 @@
+name: First Action
+
+on:
+  push:
+    branches:
+    -'main'
+  pull_request:
+    -'main'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Hello 
+      run: echo "Hello there this is github action Live" 

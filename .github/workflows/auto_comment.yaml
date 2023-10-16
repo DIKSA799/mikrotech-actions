@@ -10,3 +10,13 @@ jobs:
       - name: "Github Context"
         run: echo '${{ toJSON(github.event) }}' | jq
         shell: bash
+      - name: Create comment
+        uses: peter-evans/create-or-update-comment@v3
+        with:
+          issue-number: ${{ (github.event.issue.number ) }}
+          body: |
+            This is a multi-line test comment
+            I am just exploring how incredible github action is in automating issue comments.
+
+            [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: '+1'

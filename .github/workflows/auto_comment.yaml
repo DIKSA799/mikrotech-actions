@@ -17,6 +17,7 @@ jobs:
           body: |
             This is a multi-line test comment
             I am just exploring how incredible github action is in automating issue comments.
-
+             - With GitHub **Markdown** :sparkles:
+             - Created by [create-or-update-comment][1]
             [1]: https://github.com/peter-evans/create-or-update-comment
           reactions: '+1'

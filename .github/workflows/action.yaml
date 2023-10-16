@@ -1,0 +1,20 @@
+name: Testing Action
+
+on:
+   push:
+     branches:
+       - main
+   pull_request:
+     branches:
+      - main
+   workflow_dispatch:
+
+
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v2
+      - name: Testing Actions
+        run: echo "Hi There is is also another testing of github action"
+        shell: bash

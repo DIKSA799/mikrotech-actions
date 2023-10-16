@@ -14,7 +14,7 @@ jobs:
   hello:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v2
+      - uses: actions/checkout@v2
       - name: Testing Actions
         run: echo "Hi There is is also another testing of github action"
         shell: bash

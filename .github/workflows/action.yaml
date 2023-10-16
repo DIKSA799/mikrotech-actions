@@ -23,4 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: second action
-        run: echo "Good bye job runs perfectly !"
+        run: echo "Good bye job runs perfectly!"

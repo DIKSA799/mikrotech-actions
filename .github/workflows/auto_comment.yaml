@@ -16,7 +16,6 @@ jobs:
           issue-number: ${{ (github.event.issue.number ) }}
           body: |
             This is a multi-line test comment
-                        - name: Create or Update Comment
-                uses: peter-evans/create-or-update-comment@v3.0.2
+            it supporse to be automated by github actions. thanks
             
           reactions: '+1'

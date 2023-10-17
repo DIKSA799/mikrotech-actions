@@ -20,8 +20,8 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
-        python-version: python-3.13.0-alpha.1  
-
+        python-version: python-3.13.0-alpha.1-darwin-x64.tar.gz
+        
     - name: Install dependencies
       run: pip install -r requirements.txt
 

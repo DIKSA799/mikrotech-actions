@@ -18,6 +18,11 @@ jobs:
       - name: Testing Actions
         run: echo "Hi There is is also another testing of github action"
         shell: bash
+  goodbye:
+    runs-on: ubuntu-latest
+    steps:
+      - name: second action
+        run: echo "Good bye job runs perfectly!"
 
   goodbye:
     runs-on: ubuntu-latest

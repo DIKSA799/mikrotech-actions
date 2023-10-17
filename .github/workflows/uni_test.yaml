@@ -43,6 +43,14 @@ jobs:
     - name: Run Tests
       run: |
         python -m unittest discover -v
+      continue-on-error: true
+
+    - name: Create unit-test-reports directory
+      run: mkdir -p test-reports
+
+    - name: Run Tests and Save Results
+      run: |
+        python -m xmlrunner discover -v -o test-reports
         if [ -d "test-reports" ] && [ -n "$(ls -A test-reports)" ]; then
           mv test-reports/*.xml .
         fi

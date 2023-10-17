@@ -1,0 +1,27 @@
+name: practice
+
+on:
+  push:
+    branches:
+      - 'main'
+  pull_request:
+    branches:
+      - 'main'
+  workflow_dispatch:
+
+  jobs:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Practice
+        uses: actions/checkout@v2
+        run: echo "Hello Fucking Practice"
+        shell: bash
+ 
+  second:
+    runs-on: ubuntu-latest
+    steps:
+     - name: second practice
+       run: echo "The second fucking Practice"
+       shell: bash
+
+

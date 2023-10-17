@@ -26,8 +26,15 @@ jobs:
 
     - name: updating requirements
       run:  pip install --upgrade pip
+      
     - name: Install dependencies
-      run: pip install -r requirements.txt
+      run: |
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        else
+          echo "No requirements.txt file found."
+        fi
+      working-directory: ${{ github.workspace }}
 
     - name: Run Tests
       run: |

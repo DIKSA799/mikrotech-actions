@@ -27,6 +27,9 @@ jobs:
     - name: updating requirements
       run:  pip install --upgrade pip
       
+    - name: unittest package installing
+      run: pip install unittest-xml-reporting
+      
     - name: Install dependencies
       run: |
         if [ -f requirements.txt ]; then
@@ -38,19 +41,13 @@ jobs:
 
     - name: Run Tests
       run: |
-        python -m unittest discover -v
+        python -m xmlrunner discover -v -o test-reports
       continue-on-error: true
+
 
     - name: Create unit-test-reports directory
       run: mkdir test-reports
 
-    - name: Run Tests
-      run: python -m unittest discover -v
-      continue-on-error: true
-
-    - name: Run Tests
-      run: python -m unittest discover -v
-      continue-on-error: true
 
     - name: Save Test Results
       run: mv *.xml test-reports/

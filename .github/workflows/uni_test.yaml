@@ -16,7 +16,8 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
-    - name: Install python 3.10
+
+    - name: Install Python 3.10
       run: sudo apt install python3.10
       
     - name: Set up Python
@@ -24,12 +25,12 @@ jobs:
       with:
         python-version: 3.9
 
-    - name: updating requirements
-      run:  pip install --upgrade pip
+    - name: Update pip
+      run: pip install --upgrade pip
       
-    - name: unittest package installing
+    - name: Install unittest-xml-reporting
       run: pip install unittest-xml-reporting
-      
+
     - name: Install dependencies
       run: |
         if [ -f requirements.txt ]; then
@@ -41,19 +42,14 @@ jobs:
 
     - name: Run Tests
       run: |
-        python -m xmlrunner discover -v -o test-reports
+        python -m unittest discover -v
+        if [ -d "test-reports" ] && [ -n "$(ls -A test-reports)" ]; then
+          mv test-reports/*.xml .
+        fi
       continue-on-error: true
-
-
-    - name: Create unit-test-reports directory
-      run: mkdir -p test-reports
-
-    - name: Save Test Results
-      run: mv *.xml test-reports/
-
 
     - name: Upload Test Results
       uses: actions/upload-artifact@v2
       with:
         name: test-results
-        path: test-reports
+        path: ./*.xml

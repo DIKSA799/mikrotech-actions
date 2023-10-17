@@ -1,5 +1,5 @@
 import unittest
-from Calculate import add, subtract, multiply, divide
+from Calculate import add, subtract, multiplication, division
 
 class TestCalculator(unittest.TestCase):
 
@@ -13,18 +13,18 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(subtract(-1, 1), -2)
         self.assertEqual(subtract(0, 0), 0)
 
-    def test_multiply(self):
-        self.assertEqual(multiply(2, 3), 6)
-        self.assertEqual(multiply(-1, 1), -1)
-        self.assertEqual(multiply(0, 5), 0)
+    def test_multiplication(self):
+        self.assertEqual(multiplication(2, 3), 6)
+        self.assertEqual(multiplication(-1, 1), -1)
+        self.assertEqual(multiplication(0, 5), 0)
 
-    def test_divide(self):
-        self.assertEqual(divide(6, 3), 2)
-        self.assertEqual(divide(10, 2), 5)
-        self.assertEqual(divide(5, 2), 2.5)
+    def test_division(self):
+        self.assertEqual(division(6, 3), 2)
+        self.assertEqual(division(10, 2), 5)
+        self.assertEqual(division(5, 2), 2.5)
 
         with self.assertRaises(ValueError):
-            divide(5, 0)
+            division(5, 0)
 
 if __name__ == '__main__':
     unittest.main()

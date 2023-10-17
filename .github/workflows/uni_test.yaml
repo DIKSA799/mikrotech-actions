@@ -46,8 +46,7 @@ jobs:
 
 
     - name: Create unit-test-reports directory
-      run: mkdir test-reports
-
+      run: mkdir -P test-reports
 
     - name: Save Test Results
       run: mv *.xml test-reports/
